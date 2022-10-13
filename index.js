@@ -48,14 +48,6 @@ client.on('messageCreate', message => {
 })
 
 client.on('messageCreate', message => {
-
-    if (message.content === 'شغال') {
-        message.reply(':CS_on:')
-    }
-
-})
-
-client.on('messageCreate', message => {
   if (message.content.startsWith('شغال')) {
     return message.reply(':CS_on:')
   }
