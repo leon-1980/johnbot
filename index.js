@@ -32,19 +32,18 @@ DiscordModal(client)
 const db = new data({path : "database.json"})
 
 // تعديل مهم
-const prefix+ = "-"; // حط البريفيكس اللي انت عايزه
+const prefix = "-"; // حط البريفيكس اللي انت عايزه
 
-const owner = ["621633393431412736","761658231981604865","999643171724214272"]; // اي دي الاونر اللي يقدر يتحكم في اوامر الاونر
+const owner = ["621633393431412736","999643171724214272"]
 
 require('events').EventEmitter.defaultMaxListeners = 9999999; // احذر لا تلعب في الكود ده
 
 // تعديل مهم
 client.on('ready', () => {
 console.log(`Logged in as ${client.user.tag} Online`);
-client.user.setActivity('System Pro', { type: 'WATCHING' }) // حط الحاله اللي انت عايز
-client.user.setStatus("idle"); // هنا لو عايز تغير تعيين الحاله مثال
+client.user.setActivity(prefix + 'help', { type: 'PLAYING' }) // حط الحاله اللي انت عايز
+client.user.setStatus("online"); // هنا لو عايز تغير تعيين الحاله مثال
 });
-
 
 // ================================================================================
 // PLAYING   1
@@ -481,7 +480,7 @@ if(msg.content === prefix + "antibots on"){
 }
   
 })
-client.on('guildMemberAdd', async member => {
+client.on('guildMember', async member => {
 const antibots = await db.get(`antibots_${member.guild.id}`)
 if(antibots === "TRUE"){
   if(member.user.bot)return member.kick()
@@ -546,7 +545,7 @@ client.on("messageCreate", message => {
   if(message.content.startsWith(prefix + "fedback")){
     const args = message.content.split(" ").slice(1).join(" ")
     if(!args) return message.channel.send({ content: "اكتب تقيمك" })
-    var fedbackchannel = message.guild.channels.cache.find(channel => channel.name === "1029707368260448266"); // اسم الروم
+    var fedbackchannel = message.guild.channels.cache.find(channel => channel.name === ""); // اسم الروم
     const embed = new Discord.MessageEmbed()
     .setTitle("New Fedback :heart_eyes:")
     .setThumbnail(`${message.author.avatarURL({dynamic : true})}`)
@@ -648,7 +647,7 @@ client.on("messageCreate", message => {
 // Auto Reaction
 // https://getemoji.com/ موقع ايموجي
 client.on("messageCreate", async message => {
-  if (message.guild.id != "1029699986335744011") return; // اي دي السيرفر
+  if (message.guild.id != "") return; // اي دي السيرفر
   if (message.channel.id != "") return; // اي دي الروم
   if(message.author.id === client.user.id) return;
      message.react("👍") // حط الايموجي اللي انت عايزه
@@ -873,10 +872,9 @@ if(!message.member.permissions.has("MUTE_MEMBERS")) return message.channel.send(
 }
 });  
 
-
 // تعديل مهم
 // Code Reaction Roles
-let channel = "1029707886508658718" // ايدي روم لوق
+let channel = "" // ايدي روم لوق
 client.on("messageCreate", async  message =>{ 
 if(message.content.startsWith(prefix + 'reaction-roles')) {
 message.delete();
