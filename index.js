@@ -694,8 +694,25 @@ let embed_1 = new MessageEmbed()
   }
 });
 
-
-
 //تست
+
+client.on("messageCreate", message => {
+  var cmd = message.content.split(' ')[0]
+  
+  if(cmd == prefix + "شغال" || cmd ==  prefix + "خط" || cmd == "line" || cmd == "خط") {
+    
+    if (!message.member.permissions.has("ADMINISTRATOR")) return message.reply(`** :rolling_eyes: You don't have permissions **`)
+    
+    message.delete();
+
+    let embed = new MessageEmbed()
+
+ .setColor(message.guild.me.displayHexColor)     
+  .setImage("")
+    
+    message.channel.send({embeds: [embed]});
+  }
+});
+
   
 client.login(token);
