@@ -722,7 +722,7 @@ client.on("messageCreate", message => {
       .setTitle("\`WELCOM\`")
       .addField(`**Developer Bot Owner Info**`, `*
 
-🏆丨\`Owner : Kevin Tube Gamer#1866\`
+🏆丨\`Owner : BR 个 ! 7Fr・#2915\`
 
 🆔丨\`ID Discord : 621633393431412736\`
 
