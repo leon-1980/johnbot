@@ -32,15 +32,17 @@ DiscordModal(client)
 const db = new data({path : "database.json"})
 
 // تعديل مهم
-const prefix = "-"; // حط البريفيكس اللي انت عايزه
+const prefix = "--"; // حط البريفيكس اللي انت عايزه
 
 const owner = ["621633393431412736","761658231981604865","","","",]; // اي دي الاونر اللي يقدر يتحكم في اوامر الاونر
 
 require('events').EventEmitter.defaultMaxListeners = 9999999; // احذر لا تلعب في الكود ده
 
 // تعديل مهم
-  console.log(`${client.user.tag}`)
-  client.user.setActivity (`${prefix}help`, { type: 'STREAMING', url: 'https://www.twitch.tv/m6lp' })
+client.on('ready', () => {
+console.log(`Logged in as ${client.user.tag} Online`);
+client.user.setActivity('Do System', { type: 'WATCHING' }) // حط الحاله اللي انت عايز
+client.user.setStatus("online"); // هنا لو عايز تغير تعيين الحاله مثال
 });
 
 // ================================================================================
@@ -66,9 +68,6 @@ return;
 process.on("rejectionHandled", error => {
 return;
 });
-
-// Code Help
-
 
 // Code Say
 client.on("messageCreate", async message => {
@@ -730,7 +729,6 @@ client.on("messageCreate", message => {
 💫丨\`AEG : 17\`
 
 👑丨\`Profile By\` <@621633393431412736>
-
         `)
       .setFooter({ text: message.author.tag , iconURL: 
      message.author.displayAvatarURL({dynamic:true})})
