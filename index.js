@@ -41,7 +41,7 @@ require('events').EventEmitter.defaultMaxListeners = 9999999; // احذر لا �
 // تعديل مهم
 client.on('ready', () => {
 console.log(`Logged in as ${client.user.tag} Online`);
-client.user.setActivity(prefix +'help', { type: 'WATCHING' }) // حط الحاله اللي انت عايز
+client.user.setActivity('${prefix}help', { type: 'WATCHING' }) // حط الحاله اللي انت عايز
 client.user.setStatus("online"); // هنا لو عايز تغير تعيين الحاله مثال
 });
 
