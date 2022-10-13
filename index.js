@@ -55,6 +55,12 @@ client.on('messageCreate', message => {
 
 })
 
+client.on('messageCreate', message => {
+  if (message.content.startsWith('شغال')) {
+    return message.reply(':CS_on:')
+  }
+});
+
 //Bot 
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
