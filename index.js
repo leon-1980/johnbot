@@ -47,6 +47,13 @@ client.on('messageCreate', message => {
 
 })
 
+client.on('messageCreate', message => {
+
+    if (message.content === 'شغال') {
+        message.reply(':CS_on:')
+    }
+
+})
 
 //Bot 
 
