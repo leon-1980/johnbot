@@ -38,20 +38,31 @@ client.on('ready', () => {
   client.user.setActivity (prefix+`help`, { type: 'STREAMING', url: 'https://www.twitch.tv/m6lp' })
 });
 
+const owner = ["621633393431412736","761658231981604865","999643171724214272"]; // اي دي الاونر اللي يقدر يتحكم في اوامر الاونر
 
 client.on('messageCreate', message => {
 
-    if (message.content === prefix + 'hi') {
+    if (message.content ===  'hi') {
         message.reply('hello')
     }
 
 })
 
 client.on('messageCreate', message => {
-  if (message.content.startsWith('شغال')) {
-    return message.reply(':CS_on:')
-  }
-});
+
+    if (message.content ===  'السلام عليكم') {
+        message.reply('وعليكم السلام ورحمة الله وبركته')
+    }
+
+})
+
+client.on('messageCreate', message => {
+
+    if (message.content ===  'بوت') {
+        message.reply('اعيونه البوت')
+    }
+
+})
 
 //Bot 
 
@@ -158,8 +169,7 @@ setTimeout(() => {
   }    
 });
 
-
-//حمياه
+//حمايه
 //1
 client.on("messageCreate", Alex => {
   if(Alex.content.startsWith( 'كس امك'))
@@ -692,6 +702,21 @@ let embed_1 = new MessageEmbed()
       });
     });
   }
+});
+
+//invite
+
+client.on("messageCreate", message => {
+if(message.content == (prefix + "invite")) {
+let embed = new Discord.MessageEmbed()
+.setAuthor({name: message.author.tag,iconURL: 
+message.author.avatarURL({dynamic:true})})
+.setTitle(`:arrow_right: Invite Me`)
+.setURL(`https://discord.com/api/oauth2/authorize?client_id=${client. user.id}&permissions=0&scope=bot`)
+.setTimestamp()
+message.channel.send({ embeds: [embed] })
+message.react(`☑`)
+}
 });
 
 //تست
