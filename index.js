@@ -39,7 +39,6 @@ const owner = ["621633393431412736","761658231981604865","","","",]; // اي د�
 require('events').EventEmitter.defaultMaxListeners = 9999999; // احذر لا تلعب في الكود ده
 
 // تعديل مهم
-client.on('ready', () => {
   console.log(`${client.user.tag}`)
   client.user.setActivity (`${prefix}help`, { type: 'STREAMING', url: 'https://www.twitch.tv/m6lp' })
 });
@@ -726,15 +725,12 @@ client.on("messageCreate", message => {
 
 🏆丨\`Owner : Kevin Tube Gamer#1866\`
 
-🆔丨\`ID Discord : 899373670131195955\`
+🆔丨\`ID Discord : 621633393431412736\`
 
-💫丨\`AEG : 14\`
+💫丨\`AEG : 17\`
 
-👑丨\`Profile By\` <@899373670131195955>
+👑丨\`Profile By\` <@621633393431412736>
 
-[Kevin Community | 4KX](https://discord.gg/tgaAqfWHdA)
-[Kevin Tube Gamer
-](https://www.youtube.com/channel/UCBj9VhKncn2-2f_DRzW6I-w)
         `)
       .setFooter({ text: message.author.tag , iconURL: 
      message.author.displayAvatarURL({dynamic:true})})
