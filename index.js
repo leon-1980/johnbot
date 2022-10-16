@@ -652,6 +652,16 @@ client.on("messageCreate", message => {
    }
 });
 
+client.on("messageCreate", message => {
+if (message.content == "امك عندي"){
+message.reply("اختك عندي")
+}})
+// Code Reply Mention Bot
+client.on("messageCreate", message => { 
+ if(message.content === `<@${client.user.id}>`) { 
+ message.reply({ content: `**Welcome im ${client.user.tag} My Prefix is ${prefix}**`})
+   }
+});
 // تعديل مهم
 // Auto Reaction
 // https://getemoji.com/ موقع ايموجي
