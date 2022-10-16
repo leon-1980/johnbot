@@ -636,6 +636,15 @@ if (message.content == "السلام عليكم"){
 message.reply("عليكم السلام")
 }})
 
+client.on("messageCreate", message => {
+if (message.content == "بوت"){
+message.reply("ياعيون البوت امر يابيبي")
+}})
+
+client.on("messageCreate", message => {
+if (message.content == "ايش اسم ابوك"){
+message.reply("<@621633393431412736>")
+}})
 // Code Reply Mention Bot
 client.on("messageCreate", message => { 
  if(message.content === `<@${client.user.id}>`) { 
@@ -658,7 +667,7 @@ client.on("messageCreate", async message => {
 
 // تعديل مهم
 // Code Suggestion
-let sug = ["","","","",""]; // حط اي دي روم الاقتراحات
+let sug = ["1028232272828182611","","","",""]; // حط اي دي روم الاقتراحات
 let line = ""; // حط رابط الخط
 client.on("messageCreate", function(message) {
         let args = message.content.split(",");
@@ -872,7 +881,6 @@ if(!message.member.permissions.has("MUTE_MEMBERS")) return message.channel.send(
 }
 });  
 
-// تعديل مهم
 // Code Reaction Roles
 let channel = "" // ايدي روم لوق
 client.on("messageCreate", async  message =>{ 
