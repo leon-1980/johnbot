@@ -645,6 +645,12 @@ client.on("messageCreate", message => {
 if (message.content == "ايش اسم ابوك"){
 message.reply("<@621633393431412736>")
 }})
+
+client.on("messageCreate", message => {
+if (message.content == "بوت احبك"){
+message.reply("ولددد انا مو قي")
+}})
+
 // Code Reply Mention Bot
 client.on("messageCreate", message => { 
  if(message.content === `<@${client.user.id}>`) { 
