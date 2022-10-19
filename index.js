@@ -647,7 +647,7 @@ message.reply("<@621633393431412736>")
 }})
 
 client.on("messageCreate", message => {
-if (message.content == "بوت*احبك"){
+if (message.content == "Love"){
 message.reply("ولددد انا مو قي")
 }})
 
